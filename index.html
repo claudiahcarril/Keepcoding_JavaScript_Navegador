@@ -22,6 +22,7 @@
         <div class="record">
             <h2>Historial: </h2>
             <hr>
+            <div id="movements-record"></div>
         </div>
         <div class="add-new-transaction">
             <h2>Añadir nueva transacción:</h2>
@@ -29,12 +30,12 @@
         </div>
         <div class="transactions">
             <label for="concept">Concepto:</label>
-            <input type="text" placeholder="Añade concepto...">
+            <input type="text" id="input-concept" placeholder="Añade concepto...">
             <label for="quantity">Cantidad: (Negativo - Gasto / Positivo - Ingreso)</label>
-            <input type="number" placeholder="Introduce cantidad...">
+            <input type="number" id="input-quantity" placeholder="Introduce cantidad...">
             <button type="submit" class="btn-submit">Añadir transacción</button>
         </div>
     </section>
-    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
