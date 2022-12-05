@@ -67,6 +67,18 @@ hr {
     padding-bottom: 10px;
 }
 
+#movements-record p {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 0 0 5px 0;
+    background-color: white;
+    border-right: green 5px solid;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+}
+
+.add-new-transaction {
+    margin-top: 20px;
+}
 
 .transactions {
     display: flex;

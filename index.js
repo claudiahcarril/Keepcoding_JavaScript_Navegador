@@ -11,31 +11,40 @@
 
 
 
-// HISTORIAL
-function showMovements() {
-    const movementsRecord = document.getElementById("movements-record")
-    const accountMovements = document.createElement('p')
-    movementsRecord.appendChild(accountMovements)
-}
 
-
-
-
-
-
-// AÑADIR NUEVA TRANSACCIÓN
 
 const buttonSubmit = document.querySelector('.btn-submit');
-const inputConcept = document.querySelector('#input-concept')
-const inputQuantity = document.querySelector('#input-quantity')
-
-function buttonClicked() {
+buttonSubmit.addEventListener("click", () => {
+    // AÑADIR NUEVA TRANSACCIÓN
+    const inputConcept = document.querySelector('#input-concept')
+    const inputQuantity = document.querySelector('#input-quantity')
+        
     localStorage.setItem("concept", inputConcept.value)
     localStorage.setItem("quantity", inputQuantity.value)
-    console.log(inputConcept, inputQuantity)
-}
+    console.log(inputConcept.value, inputQuantity.value)
+
+
+    // HISTORIAL
+    const movementsRecord = document.getElementById("movements-record")
+    const accountMovements = document.createElement('p')
+    accountMovements.innerText = localStorage.inputConcept
+    
+    movementsRecord.appendChild(accountMovements)
 
 
 
-buttonSubmit.addEventListener("click", buttonClicked)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
 
