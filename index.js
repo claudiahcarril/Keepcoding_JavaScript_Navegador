@@ -23,13 +23,21 @@ buttonSubmit.addEventListener("click", () => {
     localStorage.setItem("quantity", inputQuantity.value)
     console.log(inputConcept.value, inputQuantity.value)
 
+    const objInput = [{
+        concept: localStorage.getItem("concept"),
+        quantity: localStorage.getItem("quantity"),
+    }]
 
     // HISTORIAL
-    const movementsRecord = document.getElementById("movements-record")
-    const accountMovements = document.createElement('p')
-    accountMovements.innerText = localStorage.inputConcept
+    objInput.forEach(input => {
+        const movementsRecord = document.getElementById("movements-record")
+        const accountMovements = document.createElement('p')
+        console.log(`${input.concept} -  ${input.quantity}`)
+        accountMovements.innerText = `${input.concept} ${input.quantity}€`
     
-    movementsRecord.appendChild(accountMovements)
+        movementsRecord.appendChild(accountMovements)
+        
+    });
 
 
 
