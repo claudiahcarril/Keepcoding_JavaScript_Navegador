@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+
+:root {
+    --primary-color: #fa575a;
+}
+
+
+
 html  {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0 0 10px 20px;
 }
 
 
@@ -7,9 +22,36 @@ html  {
     font-size: 1.2rem;
     text-align: center;
     padding: 20px;
+
 }
 
 
 .saving {
+    padding: 0 0 10px 20px;
+}
 
+
+.box-saving {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 50px;
+}
+
+.box-saving h3 {
+    font-size: 0.9rem;
+}
+
+
+.income, .expense {
+    text-align: center;
+    width: 50%;
+    align-items: center;
+}
+
+.transactions {
+    display: flex;
+}
+
+.transactions label {
+    flex-wrap: wrap;
 }
