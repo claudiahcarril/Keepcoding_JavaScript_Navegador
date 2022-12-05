@@ -5,22 +5,24 @@
 }
 
 
-
 body  {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(248, 250, 252);
-    width: max-content;
+    display: flex;
+    justify-content: center;
+}
+
+section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    max-width: 350px;
 }
-
 
 body h2 {
     font-size: 1rem;
     font-weight: 700;
-    padding: 0 0 10px 20px;
+    margin: 0;
 }
 
 
@@ -28,12 +30,11 @@ body h2 {
     font-size: 1.2rem;
     text-align: center;
     padding: 20px;
-
 }
 
 
 .saving {
-    padding: 0 0 10px 20px;
+    padding-bottom: 10px;
 }
 
 
@@ -43,10 +44,7 @@ body h2 {
     margin-bottom: 50px;
     flex-direction: row;
     justify-content: center;
-    width: 350px;
-    padding: 15px;
     background-color: white;
-
 }
 
 .box-saving h3 {
@@ -60,14 +58,13 @@ body h2 {
     align-items: center;
 }
 
-.record {
-    width: 350px;
-    padding: 0 0 10px 20px;
+hr {
+    border: rgb(223, 223, 223) solid 1px;
 }
 
-.add-new-transaction {
-    width: 350px;
-    padding: 0 0 10px 20px;
+
+.record {
+    padding-bottom: 10px;
 }
 
 
@@ -75,24 +72,27 @@ body h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
-    padding: 15px;
-
 }
 
 .transactions label {
-    margin-top: 20px;
-    padding: 0 0 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
 .transactions input {
     padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    border: rgb(223, 223, 223) solid 1px;
+    
 }
 
 .btn-submit {
-    margin-top: 20px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: white;
+    font-weight: 500;
     background-color: #fa575a;
     border: none;
     padding: 15px;
@@ -103,3 +103,4 @@ body h2 {
 .btn-submit:hover {
     background-color: #ca4446;
 }
+
