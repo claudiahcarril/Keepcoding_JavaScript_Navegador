@@ -17,6 +17,10 @@ buttonSubmit.addEventListener("click", () => {
     }]
     
     // HISTORIAL
+    let numQuantity = 0
+    let sumIncome = 0
+    let sumExpense = 0
+
     objInput.forEach(input => {
         const movementsRecord = document.getElementById("movements-record")
         const accountMovements = document.createElement('div')
@@ -25,13 +29,14 @@ buttonSubmit.addEventListener("click", () => {
         <p>${input.quantity}€</p>
         `
         // Pasar de string a number input.quantity
-        const numQuantity = parseInt(input.quantity)
-        console.log(typeof numQuantity, numQuantity)
+        numQuantity = parseInt(input.quantity)
 
         if (numQuantity > 0) {
             accountMovements.classList.add("divRecordsPositive")
+            sumIncome += numQuantity
         } else {
             accountMovements.classList.add("divRecordsNegative")
+            sumExpense += numQuantity
         }
 
         movementsRecord.appendChild(accountMovements)
@@ -42,10 +47,17 @@ buttonSubmit.addEventListener("click", () => {
     inputQuantity.value = ""
 
     // MOSTRAR INGRESOS Y GASTOS
-    console.log(objInput)
+    console.log(numQuantity)
+    const income = document.getElementsByClassName('incomeDiv')
+    const expense = document.getElementsByClassName('expenseDiv')
+    const saveNumber = document.createElement('p')
 
 
-    
+
+
+    saveNumber.innerText = `${}€`
+    income.appendChild(saveNumber)
+
     
     
     
