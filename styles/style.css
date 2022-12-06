@@ -68,7 +68,7 @@ hr {
 }
 
 
-.divRecords {
+.divRecordsPositive {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -80,9 +80,26 @@ hr {
     padding: 10px;
 }
 
-.divRecords p {
+.divRecordsPositive p {
     margin: 0;
 }
+
+.divRecordsNegative {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 0 0 5px 0;
+    background-color: white;
+    border-right: red 5px solid;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+}
+
+.divRecordsNegative p {
+    margin: 0;
+}
+
 
 .add-new-transaction {
     margin-top: 20px;
