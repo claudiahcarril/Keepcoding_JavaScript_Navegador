@@ -67,7 +67,11 @@ hr {
     padding-bottom: 10px;
 }
 
-#movements-record p {
+
+.divRecords {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0 0 5px 0;
     background-color: white;
@@ -76,7 +80,9 @@ hr {
     padding: 10px;
 }
 
-
+.divRecords p {
+    margin: 0;
+}
 
 .add-new-transaction {
     margin-top: 20px;
