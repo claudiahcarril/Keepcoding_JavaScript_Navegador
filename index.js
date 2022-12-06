@@ -3,16 +3,23 @@
 
 
 // MOSTRAR INGRESOS Y GASTOS (0.00€)
-let sumIncome = parseFloat(0).toFixed(2)
+let savings = 0
+const saving = document.querySelector('.all-savings')
+const savingParragraph = document.createElement('p')
+savingParragraph.innerText = `${savings.toFixed(2)}€`
+saving.appendChild(savingParragraph)
+
+
+let sumIncome = 0
 const income = document.querySelector('.incomeQuantity')
 const incomeParragraph = document.createElement('p')
-incomeParragraph.innerText = `${sumIncome}€`
+incomeParragraph.innerText = `${sumIncome.toFixed(2)}€`
 income.appendChild(incomeParragraph)
 
-let sumExpense = parseFloat(0).toFixed(2)
+let sumExpense = 0
 const expense = document.querySelector('.expenseQuantity')
 const expenseParragraph = document.createElement('p')
-expenseParragraph.innerText = `${sumExpense}€`
+expenseParragraph.innerText = `${sumExpense.toFixed(2)}€`
 expense.appendChild(expenseParragraph)
 
 
@@ -47,11 +54,12 @@ buttonSubmit.addEventListener("click", () => {
         if (numQuantity > 0) {
             accountMovements.classList.add("divRecordsPositive")
             sumIncome = sumIncome + numQuantity
-            console.log(sumIncome)
+            incomeParragraph.innerText = `${sumIncome}€`
         } else {
             accountMovements.classList.add("divRecordsNegative")
             sumExpense += numQuantity
             console.log(sumExpense)
+            expenseParragraph.innerText = `${sumExpense}€`
         }
 
         movementsRecord.appendChild(accountMovements)
@@ -60,16 +68,12 @@ buttonSubmit.addEventListener("click", () => {
     
     inputConcept.value = ""
     inputQuantity.value = ""
-
-    // MOSTRAR INGRESOS Y GASTOS
-    console.log(numQuantity)
-    
-    
    
     
-    
     // CALCULO "TU AHORRO"
-    
+    sumExpense = sumExpense * -1
+    savings = sumIncome - sumExpense
+    savingParragraph.innerText = `${savings.toFixed(2)}€`
 })    
 
 
