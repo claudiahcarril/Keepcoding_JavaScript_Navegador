@@ -33,10 +33,19 @@ buttonSubmit.addEventListener("click", () => {
 
         if (numQuantity > 0) {
             accountMovements.classList.add("divRecordsPositive")
-            sumIncome += numQuantity
+            sumIncome = sumIncome + numQuantity
+            console.log(sumIncome)
+            const oldIncome = document.getElementsByClassName('incomeQuantity')
+
+            const newIncome = document.createElement('p')
+            newIncome.innerText = `${sumIncome}€`
+            oldIncome.replaceChild(newIncome, oldIncome.childNodes)
         } else {
             accountMovements.classList.add("divRecordsNegative")
             sumExpense += numQuantity
+            console.log(sumExpense)
+            const expense = document.getElementsByClassName('expenseQuantity')
+            expense.innerText = `${sumExpense}€`
         }
 
         movementsRecord.appendChild(accountMovements)
@@ -48,18 +57,9 @@ buttonSubmit.addEventListener("click", () => {
 
     // MOSTRAR INGRESOS Y GASTOS
     console.log(numQuantity)
-    const income = document.getElementsByClassName('incomeDiv')
-    const expense = document.getElementsByClassName('expenseDiv')
-    const saveNumber = document.createElement('p')
-
-
-
-
-    saveNumber.innerText = `${}€`
-    income.appendChild(saveNumber)
-
     
     
+   
     
     
     // CALCULO "TU AHORRO"
