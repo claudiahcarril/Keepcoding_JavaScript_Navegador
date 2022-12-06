@@ -54,12 +54,12 @@ buttonSubmit.addEventListener("click", () => {
         if (numQuantity > 0) {
             accountMovements.classList.add("divRecordsPositive")
             sumIncome = sumIncome + numQuantity
-            incomeParragraph.innerText = `${sumIncome}€`
+            incomeParragraph.innerText = `${sumIncome.toFixed(2)}€`
         } else {
             accountMovements.classList.add("divRecordsNegative")
             sumExpense += numQuantity
             console.log(sumExpense)
-            expenseParragraph.innerText = `${sumExpense}€`
+            expenseParragraph.innerText = `${sumExpense.toFixed(2)}€`
         }
 
         movementsRecord.appendChild(accountMovements)
@@ -77,6 +77,11 @@ buttonSubmit.addEventListener("click", () => {
 })    
 
 
+// TO DO:
+// Al añadir un segundo gasto no resta, sino que suma
+// Podremos borrar cualquier gasto o ingreso que hayamos introducido.
+// Si cerramos la web y volvemos a entrar, tenemos que recuperar 
+// todos los gastos e ingresos que habíamos introducido, así como el ahorro total.
 
 
 
