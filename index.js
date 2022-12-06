@@ -2,6 +2,20 @@
 // "Nomina": 1000€,.... (JSON.stringify)
 
 
+// MOSTRAR INGRESOS Y GASTOS (0.00€)
+let sumIncome = parseFloat(0).toFixed(2)
+const income = document.querySelector('.incomeQuantity')
+const incomeParragraph = document.createElement('p')
+incomeParragraph.innerText = `${sumIncome}€`
+income.appendChild(incomeParragraph)
+
+let sumExpense = parseFloat(0).toFixed(2)
+const expense = document.querySelector('.expenseQuantity')
+const expenseParragraph = document.createElement('p')
+expenseParragraph.innerText = `${sumExpense}€`
+expense.appendChild(expenseParragraph)
+
+
 const buttonSubmit = document.querySelector('.btn-submit');
 buttonSubmit.addEventListener("click", () => {
     // AÑADIR NUEVA TRANSACCIÓN
@@ -16,10 +30,9 @@ buttonSubmit.addEventListener("click", () => {
         quantity: localStorage.getItem("quantity"),
     }]
     
+
     // HISTORIAL
     let numQuantity = 0
-    let sumIncome = 0
-    let sumExpense = 0
 
     objInput.forEach(input => {
         const movementsRecord = document.getElementById("movements-record")
@@ -35,17 +48,10 @@ buttonSubmit.addEventListener("click", () => {
             accountMovements.classList.add("divRecordsPositive")
             sumIncome = sumIncome + numQuantity
             console.log(sumIncome)
-            const oldIncome = document.getElementsByClassName('incomeQuantity')
-
-            const newIncome = document.createElement('p')
-            newIncome.innerText = `${sumIncome}€`
-            oldIncome.replaceChild(newIncome, oldIncome.childNodes)
         } else {
             accountMovements.classList.add("divRecordsNegative")
             sumExpense += numQuantity
             console.log(sumExpense)
-            const expense = document.getElementsByClassName('expenseQuantity')
-            expense.innerText = `${sumExpense}€`
         }
 
         movementsRecord.appendChild(accountMovements)
