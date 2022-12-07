@@ -173,3 +173,27 @@ hr {
     background-color: #ca4446;
 }
 
+.delete {
+    display: none;
+    color: white;
+}
+
+
+.divRecordsNegative:hover {
+    background-color: grey;
+    color: white;
+    background-image:url(/images/delete_FILL0_wght400_GRAD0_opsz48.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+}
+
+
+.divRecordsPositive:hover {
+    background-color: grey;
+    color: white;
+    background-image:url(/images/delete_FILL0_wght400_GRAD0_opsz48.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+}

@@ -48,7 +48,6 @@ buttonSubmit.addEventListener("click", () => {
         <p>${input.concept}</p> 
         <p>${input.quantity}€</p>
         `
-        // Pasar de string a number input.quantity
         numQuantity = parseInt(input.quantity)
 
         if (numQuantity > 0) {
@@ -71,14 +70,13 @@ buttonSubmit.addEventListener("click", () => {
    
     
     // CALCULO "TU AHORRO"
-    sumExpense = sumExpense * -1
-    savings = sumIncome - sumExpense
+    // sumExpense = sumExpense * -1
+    savings = sumIncome + sumExpense
     savingParragraph.innerText = `${savings.toFixed(2)}€`
 })    
 
 
 // TO DO:
-// Al añadir un segundo gasto no resta, sino que suma
 // Podremos borrar cualquier gasto o ingreso que hayamos introducido.
 // Si cerramos la web y volvemos a entrar, tenemos que recuperar 
 // todos los gastos e ingresos que habíamos introducido, así como el ahorro total.
