@@ -23,6 +23,8 @@ expenseParragraph.innerText = `${sumExpense.toFixed(2)}€`
 expense.appendChild(expenseParragraph)
 
 
+
+const movementsRecord = document.getElementById("movements-record")
 const buttonSubmit = document.querySelector('.btn-submit');
 buttonSubmit.addEventListener("click", () => {
     // AÑADIR NUEVA TRANSACCIÓN
@@ -42,7 +44,6 @@ buttonSubmit.addEventListener("click", () => {
     let numQuantity = 0
 
     objInput.forEach(input => {
-        const movementsRecord = document.getElementById("movements-record")
         const accountMovements = document.createElement('div')
         accountMovements.innerHTML = `
         <p>${input.concept}</p> 
@@ -57,7 +58,6 @@ buttonSubmit.addEventListener("click", () => {
         } else {
             accountMovements.classList.add("divRecordsNegative")
             sumExpense += numQuantity
-            console.log(sumExpense)
             expenseParragraph.innerText = `${sumExpense.toFixed(2)}€`
         }
 
@@ -69,11 +69,35 @@ buttonSubmit.addEventListener("click", () => {
     inputQuantity.value = ""
    
     
-    // CALCULO "TU AHORRO"
-    // sumExpense = sumExpense * -1
     savings = sumIncome + sumExpense
     savingParragraph.innerText = `${savings.toFixed(2)}€`
 })    
+
+
+
+
+const deleteRecordPositive = document.getElementsByClassName('divRecordsPositive')
+const deleteRecordNegative = document.getElementsByClassName('divRecordsNegative')
+
+if (deleteRecordPositive) {
+    deleteRecordPositive.addEventListener("click", () => {
+        deleteRecordPositive.parentNode.removeChild(deleteRecordPositive)
+    })
+}
+
+if (deleteRecordNegative) {
+    deleteRecordNegative.addEventListener("click", () => {
+        deleteRecordNegative.parentNode.removeChild(deleteRecordNegative)
+    })
+}
+
+
+
+
+
+
+
+
 
 
 // TO DO:
