@@ -1,0 +1,21 @@
+{
+  "name": "1122_entrega_javascript_navegador",
+  "version": "1.0.0",
+  "description": "Necesitamos desarrollar una web que nos ayude a gestionar nuestros ingresos y gastos, con el objetivo de conocer el dinero que tenenos ahorrado.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiahcarril/Keepcoding_JavaScript_Navegador.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiahcarril/Keepcoding_JavaScript_Navegador/issues"
+  },
+  "homepage": "https://github.com/claudiahcarril/Keepcoding_JavaScript_Navegador#readme"
+}
