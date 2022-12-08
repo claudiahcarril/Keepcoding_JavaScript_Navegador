@@ -7,9 +7,7 @@ let sumExpense = 0
 
 function showLocalStorage() {
     let obj = localStorage.getItem("movements")
-    if (obj === null) {
-        obj = objFinal
-    } else {
+    if (obj != null) {
         objFinal = JSON.parse(obj)
     }
 }
@@ -49,7 +47,7 @@ buttonSubmit.addEventListener("click", () => {
 
 // Calculate saving
 function calculateSaving() {
-    let savings = objFinal.reduce((sum, value) => sum + parseInt(value.quantity), 0)
+    let savings = objFinal.reduce((sum, value) => sum + parseFloat(value.quantity), 0)
     const savingParragraph = document.querySelector(".savingParragraph")
     savingParragraph.innerText = `${savings.toFixed(2)}€`    
 }
@@ -88,11 +86,12 @@ function showRecords(objInput) {
     const accountMovements = document.createElement("div")
     accountMovements.id = objInput.id
     accountMovements.classList.add("divRecords")
+    numQuantity = parseFloat(objInput.quantity)
     accountMovements.innerHTML = `
     <p>${objInput.concept}</p> 
-    <p>${objInput.quantity}€</p>
+    <p>${numQuantity.toFixed(2)}€</p>
     `
-    numQuantity = parseInt(objInput.quantity)
+    
             
     if (numQuantity > 0) {
         accountMovements.classList.add("divRecordsPositive")
@@ -102,7 +101,6 @@ function showRecords(objInput) {
     movementsRecord.appendChild(accountMovements)
 
     accountMovements.addEventListener("click", () => {
-        console.log("click")
         deleteRecord(accountMovements)
     })   
 }
@@ -114,12 +112,10 @@ function calculateIncomeExpense(){
     let arraySumExpense = []
 
     for (let i = 0; i < objFinal.length; i++) {
-        if (parseInt(objFinal[i].quantity) > 0) {
-            arraySumIncome.push(parseInt(objFinal[i].quantity))
-            console.log("arraySumIncome", arraySumIncome)
+        if (parseFloat(objFinal[i].quantity) > 0) {
+            arraySumIncome.push(parseFloat(objFinal[i].quantity))
         } else {
-            arraySumExpense.push(parseInt(objFinal[i].quantity))
-            console.log("arraySumExpense", arraySumExpense)
+            arraySumExpense.push(parseFloat(objFinal[i].quantity))
         }
     }
 
@@ -140,11 +136,12 @@ export function deleteRecord(accountMovements) {
     let idInput = accountMovements.id
         
     for (let i = 0; i < objFinal.length; i++) {
-        if (parseInt(idInput) === objFinal[i].id) {
-            console.log('deleting', idInput)
+        if (parseFloat(idInput) === objFinal[i].id) {
             objFinal.splice(i, 1)
         }
     }
+
+    localStorage.setItem("movements", JSON.stringify(objFinal))
 
     calculateIncomeExpense()
     calculateSaving()
